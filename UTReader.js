@@ -1,4 +1,4 @@
-window.UTReader = function(arrayBuffer) {
+module.exports = function(arrayBuffer) {
 	/**
 	 * Globally accessible DataView object of this file
 	 */
