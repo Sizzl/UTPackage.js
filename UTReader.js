@@ -1687,7 +1687,7 @@ module.exports = function(arrayBuffer) {
 		// The first byte of property block is a name table index
 		let currentPropName = reader.nameTable[reader.getCompactIndex()];
 
-		while (currentPropName.toLowerCase() !== "none") {
+		while (typeof(currentPropName) == 'string' && currentPropName.toLowerCase() !== "none") {
 			const prop = {};
 
 			// Next byte contains property info (type, size, etc.)
