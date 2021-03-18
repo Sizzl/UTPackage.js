@@ -1179,16 +1179,17 @@ module.exports = function(arrayBuffer) {
 		// System
 		"botpack"          : "u",
 		"core"             : "u",
-		"de"               : "u",
+		"de"               : "u", // BP 2
 		"editor"           : "u",
 		"engine"           : "u",
-		"epiccustommodels" : "u",
+		"epiccustommodels" : "u", // BP 1
 		"fire"             : "u",
 		"ipdrv"            : "u",
 		"ipserver"         : "u",
-		"multimesh"        : "u",
-		"relics"           : "u",
-		"relicsbindings"   : "u",
+		"multimesh"        : "u", // BP 1
+		"relics"           : "u", // BP 1
+		"relicsbindings"   : "u", // BP 1
+		"skeletalchars"    : "u", // BP 4
 		"ubrowser"         : "u",
 		"umenu"            : "u",
 		"unreali"          : "u",
@@ -1272,70 +1273,82 @@ module.exports = function(arrayBuffer) {
 		"as-rook"          : "unr",
 		"as-tutorial"      : "unr",
 		"cityintro"        : "unr",
+		"ctf-beatitude"    : "unr", // BP 4
 		"ctf-command"      : "unr",
 		"ctf-coret"        : "unr",
-		"ctf-cybrosis]["   : "unr",
-		"ctf-darji16"      : "unr",
+		"ctf-cybrosis]["   : "unr", // BP 1
+		"ctf-darji16"      : "unr", // BP 1
 		"ctf-dreary"       : "unr",
+		"ctf-epicboy"      : "unr", // BP 4
 		"ctf-eternalcave"  : "unr",
 		"ctf-face"         : "unr",
-		"ctf-face]["       : "unr",
+		"ctf-face-se"      : "unr", // BP 4
+		"ctf-face]["       : "unr", // BP 3
 		"ctf-gauntlet"     : "unr",
-		"ctf-hallofgiants" : "unr",
-		"ctf-high"         : "unr",
-		"ctf-hydro16"      : "unr",
-		"ctf-kosov"        : "unr",
+		"ctf-hallofgiants" : "unr", // BP 2
+		"ctf-high"         : "unr", // BP 3
+		"ctf-hydro16"      : "unr", // BP 1
+		"ctf-kosov"        : "unr", // BP 3
 		"ctf-lavagiant"    : "unr",
 		"ctf-niven"        : "unr",
 		"ctf-november"     : "unr",
 		"ctf-noxion16"     : "unr",
-		"ctf-nucleus"      : "unr",
-		"ctf-orbital"      : "unr",
+		"ctf-nucleus"      : "unr", // BP 3
+		"ctf-orbital"      : "unr", // BP 2
+		"ctf-ratchet"      : "unr", // BP 4
 		"ctf-tutorial"     : "unr",
-		"dm-agony"         : "unr",
-		"dm-arcanetemple"  : "unr",
+		"dm-agony"         : "unr", // BP 1
+		"dm-arcanetemple"  : "unr", // BP 1
 		"dm-barricade"     : "unr",
+		"dm-bishop"        : "unr", // BP 4
+		"dm-closer"        : "unr", // BP 4
 		"dm-codex"         : "unr",
 		"dm-conveyor"      : "unr",
-		"dm-crane"         : "unr",
+		"dm-crane"         : "unr", // BP 3
 		"dm-curse]["       : "unr",
-		"dm-cybrosis]["    : "unr",
+		"dm-cybrosis]["    : "unr", // BP 1
 		"dm-deck16]["      : "unr",
 		"dm-fetid"         : "unr",
 		"dm-fractal"       : "unr",
 		"dm-gothic"        : "unr",
 		"dm-grinder"       : "unr",
-		"dm-healpod]["     : "unr",
+		"dm-grit-tourney"  : "unr", // BP 4
+		"dm-healpod]["     : "unr", // BP 1
 		"dm-hyperblast"    : "unr",
 		"dm-kgalleon"      : "unr",
 		"dm-liandri"       : "unr",
-		"dm-malevolence"   : "unr",
-		"dm-mojo]["        : "unr",
+		"dm-malevolence"   : "unr", // BP 1
+		"dm-mojo]["        : "unr", // BP 1
 		"dm-morbias]["     : "unr",
 		"dm-morpheus"      : "unr",
 		"dm-oblivion"      : "unr",
 		"dm-peak"          : "unr",
 		"dm-phobos"        : "unr",
 		"dm-pressure"      : "unr",
-		"dm-shrapnel]["    : "unr",
-		"dm-spacenoxx"     : "unr",
+		"dm-shrapnel]["    : "unr", // BP 1
+		"dm-spacenoxx"     : "unr", // BP 3
 		"dm-stalwart"      : "unr",
 		"dm-stalwartxl"    : "unr",
 		"dm-tempest"       : "unr",
 		"dm-turbine"       : "unr",
 		"dm-tutorial"      : "unr",
+		"dm-viridian-tourney" : "unr", // BP 4
 		"dm-zeto"          : "unr",
+		"dom-bullet"       : "unr", // BP 4
+		"dom-cidom"        : "unr", // BP 4
 		"dom-cinder"       : "unr",
 		"dom-condemned"    : "unr",
 		"dom-cryptic"      : "unr",
 		"dom-gearbolt"     : "unr",
 		"dom-ghardhen"     : "unr",
 		"dom-lament"       : "unr",
+		"dom-lament]["      : "unr", // BP 4
 		"dom-leadworks"    : "unr",
 		"dom-metaldream"   : "unr",
 		"dom-olden"        : "unr",
 		"dom-sesmar"       : "unr",
 		"dom-tutorial"     : "unr",
+		"dom-wolfsbay"     : "unr", // BP 4
 		"entry"            : "unr",
 		"eol_assault"      : "unr",
 		"eol_challenge"    : "unr",
@@ -1373,6 +1386,7 @@ module.exports = function(arrayBuffer) {
 		"egyptpan"       : "utx",
 		"eol"            : "utx",
 		"faces"          : "utx",
+		"factory"        : "utx", // BP 4
 		"fcommandoskins" : "utx",
 		"female1skins"   : "utx",
 		"female2skins"   : "utx",
@@ -1414,7 +1428,7 @@ module.exports = function(arrayBuffer) {
 		"nalicast"       : "utx",
 		"nalifx"         : "utx",
 		"nivenfx"        : "utx",
-		"noxxpack"       : "utx",
+		"noxxpack"       : "utx", // BP 3
 		"of1"            : "utx",
 		"old_fx"         : "utx",
 		"palettes"       : "utx",
@@ -1426,6 +1440,7 @@ module.exports = function(arrayBuffer) {
 		"rotatingu"      : "utx",
 		"scripted"       : "utx",
 		"sgirlskins"     : "utx",
+		"sgtech1"        : "utx", // BP 4
 		"shanechurch"    : "utx",
 		"shaneday"       : "utx",
 		"shanesky"       : "utx",
@@ -1437,12 +1452,12 @@ module.exports = function(arrayBuffer) {
 		"soldierskins"   : "utx",
 		"spacefx"        : "utx",
 		"starship"       : "utx",
-		"tcowmeshskins"  : "utx",
+		"tcowmeshskins"  : "utx", // BP 1
 		"tcrystal"       : "utx",
 		"terranius"      : "utx",
-		"tnalimeshskins" : "utx",
+		"tnalimeshskins" : "utx", // BP 1
 		"trenchesfx"     : "utx",
-		"tskmskins"      : "utx",
+		"tskmskins"      : "utx", // BP 1
 		"ut"             : "utx",
 		"ut_artfx"       : "utx",
 		"utbase1"        : "utx",
@@ -1454,7 +1469,7 @@ module.exports = function(arrayBuffer) {
 		"xbpfx"          : "utx",
 		"xfx"            : "utx",
 		"xtortion"       : "utx",
-		"xutfx"          : "utx",
+		"xutfx"          : "utx", // BP 3
 	}
 
 	this.polyFlags = {
