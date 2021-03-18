@@ -1,5 +1,27 @@
 # UTPackage.js
 
+Updated to support scripting through node.js runtime as a module.
+
+## Usage
+
+Simply add as a module within your node.js project and reference in a similar behavior to the original guidance.
+
+Example:
+
+```js
+const reader = require('./UTReader.js');  
+const fs = require('fs');
+fs.readFileSync('CTF-Face.unr', function (err, data) {  
+    if (err) throw err;
+    const package  = new utreader(data.buffer);
+    // do magic
+});
+````
+
+---
+
+# UTPackage.js (original README.md)
+
 A JavaScript plugin for reading [Unreal Tournament](https://en.wikipedia.org/wiki/Unreal_Tournament) package data. This has been successfully tested with a few other Unreal Engine 1 games including Deus Ex, Rune, Harry Potter and the Philosopher's Stone/Chamber of Secrets, Clive Barker's Undying, Nerf Arena Blast, and The Wheel of Time.
 
 This plugin is largely based on the following package-readers:
