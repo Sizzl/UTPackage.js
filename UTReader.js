@@ -2259,7 +2259,9 @@ module.exports = function(arrayBuffer) {
 		const paletteObject = reader.getPaletteObjectFromTexture(textureObject);
 		const paletteData   = reader.getPalette(paletteObject);
 
-		const canvas  = document.createElement("canvas");
+		// const canvas  = document.createElement("canvas");
+		const { createCanvas, loadImage, createImageData, getImageData } = require('canvas');
+		const canvas = createCanvas(16,16);
 		const context = canvas.getContext("2d");
 
 		canvas.width  = 16;
@@ -2267,21 +2269,18 @@ module.exports = function(arrayBuffer) {
 
 		const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
-		createImageBitmap(imageData).then(function(imageBitmap) {
-			let i = 0;
+		let i = 0;
 
-			for (const pixel of paletteData.colours) {
-				imageData.data[i++] = pixel.r;
-				imageData.data[i++] = pixel.g;
-				imageData.data[i++] = pixel.b;
-				imageData.data[i++] = 0xFF; // See explanation in textureToCanvas()
-			}
+		for (const pixel of paletteData.colours) {
+			imageData.data[i++] = pixel.r;
+			imageData.data[i++] = pixel.g;
+			imageData.data[i++] = pixel.b;
+			imageData.data[i++] = 0xFF; // See explanation in textureToCanvas()
+		}
 
-			context.putImageData(imageData, 0, 0);
+		context.putImageData(imageData, 0, 0);
 
-			callback(canvas, paletteData);
-		})
-
+		callback(canvas, paletteData);
 		return paletteData;
 	}
 
@@ -2304,17 +2303,23 @@ module.exports = function(arrayBuffer) {
 	}
 
 	this.textureToCanvas = function(textureObject, callback) {
+		/*
+		// Legacy via browser
 		const canvas  = document.createElement("canvas");
 		const context = canvas.getContext("2d");
+		*/
+		const { createCanvas, loadImage, createImageData, getImageData } = require('canvas');
+		const canvas = createCanvas(512,512);
+	
+		if (canvas !== undefined) {
+			const context = canvas.getContext('2d')
+			const textureData = reader.getTextureData(textureObject);
 
-		const textureData = reader.getTextureData(textureObject);
+			canvas.width  = textureData.mip_maps[0].width;
+			canvas.height = textureData.mip_maps[0].height;
 
-		canvas.width  = textureData.mip_maps[0].width;
-		canvas.height = textureData.mip_maps[0].height;
+			const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
 
-		const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-
-		createImageBitmap(imageData).then(function(imageBitmap) {
 			let i = 0;
 
 			for (const pixel of textureData.mip_maps[0].data) {
@@ -2331,13 +2336,16 @@ module.exports = function(arrayBuffer) {
 			}
 
 			context.putImageData(imageData, 0, 0);
-
+			const imageBitmap = canvas.toBuffer()
 			callback({
 				canvas : canvas,
 				bitmap : imageBitmap,
 				name   : textureData.object_name,
 			})
-		})
+		
+		} else {
+			callback({})
+		}
 	}
 
 	this.getScreenshot = function(callback) {

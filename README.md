@@ -2,6 +2,8 @@
 
 Updated to support scripting through node.js runtime as a module.
 
+Canvas support requires [node-canvas](https://github.com/Automattic/node-canvas).
+
 ## Usage
 
 Simply add as a module within your node.js project and reference in a similar behavior to the original guidance.
